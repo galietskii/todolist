@@ -49,10 +49,11 @@ body {
 .todo__list-form-button {
     margin-left: 10px;
 }
-.todo__list-form-button input {
+.todo__list-form-button button {
     border: none;
     background: linear-gradient(to top left, powderblue, blue);
     padding: 20px;
     font-size: 16px;
     border-radius: 20px;
+    font-weight: 700;
 }
