@@ -2,20 +2,29 @@ const input = document.querySelector('.text-product'),
     buttonEnter = document.querySelector('.button-add'),
     tasks = document.querySelector('.todo__list-tasks ul');
 
-const arrTasks = [];
+let arrTasks = [];
+if(localStorage.getItem('todo')) {
+    arrTasks = JSON.parse(localStorage.getItem('todo'));
+    taskList();
+}
 buttonEnter.addEventListener('click', function () {
        const newTodo = {
             task: input.value,
-            checked: false,
+            check: false,
         }
     arrTasks.push(newTodo)
     taskList();
-})
+       localStorage.setItem('todo', JSON.stringify(arrTasks));
+});
+
 function taskList() {
-    let listTask;
+    let listTask = '';
     arrTasks.forEach(function (elem, i) {
         listTask += `
-        <li>${elem.task}</li>
+        <li>
+         <input type="checkbox" class="horns" name="horns">
+        <span>${i}:</span> ${elem.task}
+        </li>
         `;
     })
     tasks.innerHTML = listTask;
