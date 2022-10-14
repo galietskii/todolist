@@ -21,7 +21,10 @@ body {
 .todo__list {
     background: linear-gradient(to top left, powderblue, pink);
     text-align: center;
-    padding: 50px 0;
+    padding: 50px;
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
 }
 .todo__list-form {
     display: flex;
@@ -56,4 +59,12 @@ body {
     font-size: 16px;
     border-radius: 20px;
     font-weight: 700;
+}
+.todo__list-tasks {
+    text-align: left;
+}
+.todo__list-tasks li {
+    list-style: none;
+    padding: 20px;
+    border-bottom: 1px solid gray;
 }
